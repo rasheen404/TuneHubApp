@@ -21,11 +21,11 @@ public class UsersController {
 
 		if (userStatus == false) {
 			userService.addUser(user);
-			System.out.println("User created successfully.");
+			return "registerSuccess";
 		} else {
-			System.out.println("User already Exist.");
+			System.out.println("Email id already exist");
+			return "registerFail";
 		}
-		return "home";
 	}
 
 	@PostMapping("/login")
@@ -33,11 +33,17 @@ public class UsersController {
 		boolean loginStatus = userService.validateUser(email, password);
 
 		if (loginStatus == true) {
+
 			System.out.println("Login successfull");
-			return "home";
+			String role = userService.getRole(email);
+			if (role.equals("admin")) {
+				return "adminHome";
+			} else {
+				return "customerHome";
+			}
 		} else {
 			System.out.println("Login failed");
-			return "login";
+			return "loginFail";
 
 		}
 	}

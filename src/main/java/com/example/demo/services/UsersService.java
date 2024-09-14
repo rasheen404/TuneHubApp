@@ -9,5 +9,7 @@ public interface UsersService {
 	public Boolean emailExist(String email);
 	
 	public Boolean validateUser(String email , String password);
+	
+	public String getRole(String email);
 
 }
