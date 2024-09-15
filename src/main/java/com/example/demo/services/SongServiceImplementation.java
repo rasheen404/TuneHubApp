@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,4 +21,21 @@ public class SongServiceImplementation implements SongService {
 		return "song saved successfully";
 	}
 
+	@Override
+	public boolean songExists(String name) {
+		Song song = songRepository.findByName(name);
+
+		if (song == null) {
+			return false;
+		} else {
+			return true;
+		}
+
+	}
+
+	@Override
+	public List<Song> fetchAllSongs() {
+		List<Song> songList = songRepository.findAll();
+		return songList;
+	}
 }
