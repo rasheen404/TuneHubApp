@@ -14,4 +14,10 @@ public class NavController {
 	public String loginMapping() {
 		return "login";
 	}
+	
+	@GetMapping("/map-addSong")
+	public String addSongMapping()
+	{
+		return "addSong";
+	}
 }
