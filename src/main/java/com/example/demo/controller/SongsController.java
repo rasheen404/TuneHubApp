@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.demo.entites.Song;
 import com.example.demo.services.SongService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class SongsController {
@@ -44,4 +46,24 @@ public class SongsController {
 		return "viewSong";
 	}
 
+	
+	
+	@GetMapping("/map-viewsongs")
+	public String customerViewSongs(Model model) {
+		Boolean primeCustomerStatus = true;
+		if(primeCustomerStatus == true) {
+
+			List<Song> songList = songService.fetchAllSongs();
+			System.out.println(songList);
+
+			model.addAttribute("songList", songList);
+
+			return "viewSong";
+		
+		}
+		else {
+			return "makePayment";
+		}
+	}
+	
 }
