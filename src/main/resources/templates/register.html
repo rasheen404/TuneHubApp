@@ -1,24 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Registration Form - TuneHub</title>
+    <style>
+        /* General body styling with dark background */
+    
+        /* General body styling with dark background */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #191414; /* Deep Black */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Form container */
+        form {
+            background-color: #282828; /* Dark Gray */
+            padding: 40px;
+            border-radius: 20px; /* More rounded corners */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        form:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Label styling */
+        label {
+            font-size: 1.2em;
+            color: #FFFFFF; /* White for visibility on dark background */
+            margin-bottom: 5px;
+            display: block;
+            font-weight: 600;
+        }
+
+        /* Input field styling */
+        input[type="text"], input[type="password"], textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 15px 0;
+            border: 1px solid #1DB954; /* Green border */
+            border-radius: 30px; /* Rounded input fields */
+            font-size: 1em;
+            background-color: #191414; /* Deep Black */
+            color: #FFFFFF; /* White text */
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+            border-color: #F9A825; /* Accent color on focus */
+        }
+
+        /* Stylized Radio Buttons as Switches */
+        .radio-label {
+            color: #FFFFFF;
+            margin-right: 10px;
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px 0;
+        }
+
+        .custom-radio {
+            background-color: #1DB954; /* Green switch background */
+            border-radius: 20px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .custom-radio:hover {
+            background-color: #F9A825; /* Accent on hover */
+        }
+
+        /* Custom checkboxes */
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"]:checked + label {
+            background-color: #F9A825; /* Checked color */
+            color: #191414;
+        }
+
+        /* Textarea Styling */
+        textarea {
+            resize: none;
+        }
+
+        /* Submit button styling */
+        input[type="submit"] {
+            background: linear-gradient(to right, #1DB954, #F9A825); /* Gradient button */
+            color: #FFFFFF;
+            padding: 14px;
+            border: none;
+            border-radius: 30px; /* Rounded button */
+            font-size: 1.2em;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(to right, #F9A825, #1DB954);
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            form {
+                padding: 20px;
+            }
+
+            input[type="submit"] {
+                font-size: 1em;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-	<form action="/register" method="post">
-		<label>User Name:</label> <input type="text" name="username">
-		<br> <br> <label>Email ID:</label> <input type="text"
-			name="email"> <br> <br> <label>Password:</label> <input
-			type="password" name="password"> <br> <br> <label>Gender:</label>
-		M<input type="radio" name="gender" value="male"> F<input
-			type="radio" name="gender" value="female"> O<input
-			type="radio" name="gender" value="others"> <br> <br>
-		<label>Role:</label> Admin<input type="radio" name="role"
-			value="admin"> Customer<input type="radio" name="role"
-			value="customer"> <br> <br> <label>Address:</label>
+    <form action="/register" method="post">
+        <label>User Name:</label>
+        <input type="text" name="username" required>
 
-		<textarea name="address"></textarea>
-		<br> <br> <input type="submit" value="REGISTER">
-	</form>
+        <label>Email ID:</label>
+        <input type="text" name="email" required>
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
+        <label>Gender:</label>
+        <div class="radio-group">
+            <input type="radio" id="male" name="gender" value="male">
+            <label class="custom-radio" for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label class="custom-radio" for="female">Female</label>
+
+            <input type="radio" id="others" name="gender" value="others">
+            <label class="custom-radio" for="others">Other</label>
+        </div>
+
+        <label>Role:</label>
+        <div class="radio-group">
+            <input type="radio" id="admin" name="role" value="admin">
+            <label class="custom-radio" for="admin">Admin</label>
+
+            <input type="radio" id="customer" name="role" value="customer">
+            <label class="custom-radio" for="customer">Customer</label>
+        </div>
+
+        <label>Address:</label>
+        <textarea name="address" rows="4" required></textarea>
+
+        <input type="submit" value="REGISTER">
+    </form>
 </body>
 </html>

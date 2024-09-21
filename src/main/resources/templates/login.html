@@ -1,15 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TuneHub</title>
+    <style>
+        /* General body styling with dark background */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #191414; /* Deep Black */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Form container */
+        form {
+            background-color: #282828; /* Dark Gray */
+            padding: 40px;
+            border-radius: 20px; /* Rounded corners */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        form:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Label styling */
+        label {
+            font-size: 1.2em;
+            color: #FFFFFF; /* White for visibility on dark background */
+            margin-bottom: 5px;
+            display: block;
+            font-weight: 600;
+        }
+
+        /* Input field styling */
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 14px;
+            margin: 15px 0;
+            border: 1px solid #1DB954; /* Green border */
+            border-radius: 30px; /* Rounded input fields */
+            font-size: 1em;
+            background-color: #191414; /* Deep Black */
+            color: #FFFFFF; /* White text */
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #F9A825; /* Accent color on focus */
+        }
+
+        /* Submit button styling */
+        input[type="submit"] {
+            background: linear-gradient(to right, #1DB954, #F9A825); /* Gradient button */
+            color: #FFFFFF;
+            padding: 14px;
+            border: none;
+            border-radius: 30px; /* Rounded button */
+            font-size: 1.2em;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(to right, #F9A825, #1DB954);
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            form {
+                padding: 20px;
+            }
+
+            input[type="submit"] {
+                font-size: 1em;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-	<form action="/login" method="post">
-		<label>Email ID:</label> <input type="text" name="email"> <br>
-		<br> <label>Password:</label> <input type="password"
-			name="password"> <br> <br> <input type="submit"
-			value="LOGIN">
-	</form>
+    <form action="/login" method="post">
+        <label>Email ID:</label>
+        <input type="text" name="email" required>
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
+        <input type="submit" value="LOGIN">
+    </form>
 </body>
 </html>

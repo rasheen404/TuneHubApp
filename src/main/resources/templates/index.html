@@ -1,17 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>TuneHubApp</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuneHubApp</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #191414; /* Deep Black */
+            color: #FFFFFF; /* White Text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Styling for the title */
+        h1 {
+            font-size: 3em;
+            color: #1DB954; /* Green Title Color */
+            margin-bottom: 50px;
+            text-shadow: 0 4px 10px rgba(29, 185, 84, 0.7);
+            transition: transform 0.3s ease; /* Title hover effect */
+        }
+
+        h1:hover {
+            transform: scale(1.05); /* Slight scale on hover */
+        }
+
+        /* Link styles */
+        a {
+            display: inline-block;
+            font-size: 1.5em;
+            text-decoration: none;
+            color: #FFFFFF; /* White Link Text */
+            background-color: #1DB954; /* Green Button Background */
+            padding: 10px 20px;
+            border-radius: 50px; /* Rounded Button */
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(29, 185, 84, 0.5);
+        }
+
+        /* Link hover effect */
+        a:hover {
+            background-color: #F9A825; /* Accent color on hover */
+            color: #FFFFFF; /* White Text */
+            box-shadow: 0 8px 20px rgba(249, 168, 37, 0.7);
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+        /* Small media query for responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            a {
+                font-size: 1.2em;
+                padding: 8px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-	<h1>Hello From TuneHubApp!!</h1>
+    <h1>Hello From TuneHubApp!!</h1>
 
-	<a href="/map-register">Register Here</a>
-
-	<a href="/map-login">Login Here</a>
-
+    <a href="/map-register">Register Here</a>
+    <a href="/map-login">Login Here</a>
 
 </body>
 </html>

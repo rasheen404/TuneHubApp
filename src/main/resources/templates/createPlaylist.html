@@ -1,20 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Add Playlist - TuneHub</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1A1A2E; /* Dark Background */
+            color: #F0F0F0; /* Light Text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Styling for the title */
+        h1 {
+            font-size: 3em;
+            color: #6BCB77; /* Light Green Accent */
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(107, 203, 119, 0.7);
+        }
+
+        /* Form styling */
+        form {
+            background-color: #2C2C2E; /* Form Background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+            width: 350px; /* Fixed width for the form */
+            transition: transform 0.3s; /* Scale effect */
+        }
+
+        form:hover {
+            transform: scale(1.02); /* Slight scale on hover */
+        }
+
+        /* Label styling */
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #F0F0F0; /* Light Text */
+        }
+
+        /* Input field styling */
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3E3E3E; /* Input Background */
+            color: #FFFFFF; /* White Text */
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            background-color: #4A4A4A; /* Darker on focus */
+            outline: none; /* Remove outline */
+        }
+
+        /* Checkbox styling */
+        input[type="checkbox"] {
+            margin-right: 10px; /* Space between checkbox and label */
+        }
+
+        /* Button styling */
+        input[type="submit"] {
+            background-color: #6BCB77; /* Light Green */
+            color: #FFFFFF; /* White Text */
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px; /* Rounded Button */
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(107, 203, 119, 0.5);
+        }
+
+        /* Button hover effect */
+        input[type="submit"]:hover {
+            background-color: #4D9F6E; /* Darker Hover Color */
+            box-shadow: 0 8px 20px rgba(77, 159, 110, 0.7);
+            transform: translateY(-3px); /* Lift effect on hover */
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em; /* Adjust title size */
+            }
+
+            form {
+                width: 90%; /* Full width on small screens */
+            }
+        }
+    </style>
 </head>
 <body>
-	<form action="/addPlayList" method="post">
-		<label>Playlist name : </label> <input type="text" name="name"><br>
-		<div th:each="songList : ${songList}">
 
-			<input type="checkbox" th:name="song" th:value="${songList.id}">
-			<label th:text="${songList.name}"></label>
+    <h1>Add Playlist</h1>
 
+    <form action="/addPlayList" method="post">
+        <label>Playlist Name:</label>
+        <input type="text" name="name" required placeholder="Enter playlist name">
+        
+        <div th:each="song : ${songList}">
+            <input type="checkbox" th:name="song" th:value="${song.id}">
+            <label th:text="${song.name}"></label><br>
+        </div>
 
-		</div>
-		<input type="submit" value="ADD PLAYLIST">
-	</form>
+        <input type="submit" value="ADD PLAYLIST">
+    </form>
+
 </body>
 </html>

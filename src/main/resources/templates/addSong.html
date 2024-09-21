@@ -1,20 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Song - TuneHub</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #191414; /* Deep Black */
+            color: #FFFFFF; /* White Text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Styling for the title */
+        h1 {
+            font-size: 3em;
+            color: #1DB954; /* Green Color */
+            margin-bottom: 40px;
+            text-shadow: 0 4px 10px rgba(29, 185, 84, 0.7);
+        }
+
+        /* Form styling */
+        form {
+            background-color: #2C2C2E; /* Slightly lighter background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            width: 300px; /* Fixed width for the form */
+        }
+
+        /* Input field styling */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.2em;
+            color: #FFFFFF; /* White Text */
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3E3E3E; /* Input Background */
+            color: #FFFFFF; /* White Text */
+        }
+
+        /* Button styling */
+        button {
+            background-color: #1DB954; /* Green Button Background */
+            color: #FFFFFF; /* White Text */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px; /* Rounded Button */
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(29, 185, 84, 0.5);
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #F9A825; /* Accent color on hover */
+            box-shadow: 0 8px 20px rgba(249, 168, 37, 0.7);
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+    </style>
 </head>
 <body>
-	<h1>Inside Add Song</h1>
 
-	<form action="/addSong" method="post">
-		<label>Song Name</label> <input type="text" name="name"><br>
-		<br> <label>Song Artist</label> <input type="text" name="artist"><br>
-		<br> <label>Song Genre</label> <input type="text" name="genre"><br>
-		<br> <label>Song Link</label> <input type="text" name="link"><br>
-		<br>
-		<button type="submit">ADD SONG</button>
+    <h1>Inside Add Song</h1>
 
-	</form>
+    <form action="/addSong" method="post">
+        <label>Song Name</label>
+        <input type="text" name="name" required>
+        
+        <label>Song Artist</label>
+        <input type="text" name="artist" required>
+        
+        <label>Song Genre</label>
+        <input type="text" name="genre" required>
+        
+        <label>Song Link</label>
+        <input type="text" name="link" required>
+        
+        <button type="submit">ADD SONG</button>
+    </form>
+
 </body>
 </html>
