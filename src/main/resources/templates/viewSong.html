@@ -2,12 +2,75 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>View Songs</title>
+    <title>View Songs - TuneHub</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1A1A2E; /* Dark Background */
+            color: #F0F0F0; /* Light Text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Styling for the title */
+        h1 {
+            font-size: 3em;
+            color: #6BCB77; /* Light Green Accent */
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(107, 203, 119, 0.7);
+        }
+
+        /* Table styling */
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #444; /* Dark border */
+        }
+
+        th {
+            background-color: #4D9F6E; /* Darker Green for Header */
+            color: #F0F0F0; /* Light Text for Header */
+        }
+
+        tr:hover {
+            background-color: #5EBE7E; /* Row Hover Color */
+        }
+
+        audio {
+            border-radius: 5px; /* Audio player rounded corners */
+            outline: none; /* Remove outline */
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em; /* Adjust title size */
+            }
+
+            table {
+                width: 95%; /* Full width on small screens */
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>This is the view song page</h1>
 
-    <table border="1">
+    <h1>This is the View Song Page</h1>
+
+    <table>
         <thead>
             <tr>
                 <th>Name</th>
@@ -29,5 +92,6 @@
             </tr>
         </tbody>
     </table>
+
 </body>
 </html>

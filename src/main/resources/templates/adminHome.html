@@ -1,18 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home - TuneHub</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #191414; /* Deep Black */
+            color: #FFFFFF; /* White Text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Styling for the title */
+        h1 {
+            font-size: 3em;
+            color: #1DB954; /* Green Color */
+            margin-bottom: 40px;
+            text-shadow: 0 4px 10px rgba(29, 185, 84, 0.7);
+        }
+
+        /* Link styles */
+        a {
+            display: inline-block;
+            font-size: 1.5em;
+            text-decoration: none;
+            color: #FFFFFF; /* White Link Text */
+            background-color: #1DB954; /* Green Button Background */
+            padding: 10px 20px;
+            border-radius: 50px; /* Rounded Button */
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(29, 185, 84, 0.5);
+        }
+
+        /* Link hover effect */
+        a:hover {
+            background-color: #F9A825; /* Accent color on hover */
+            color: #FFFFFF; /* White Text */
+            box-shadow: 0 8px 20px rgba(249, 168, 37, 0.7);
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+    </style>
 </head>
 <body>
-	<h1>This is admin Home</h1>
 
-	<a href="/map-addSong">Click here to add Song</a>
-	<br>
-	<br>
-	<a href="/viewSong">Click here to view Song</a>
-	<br>
-	<br>
-	<a href="/createPlaylist">Create Playlist</a>
+    <h1>Admin Home</h1>
+
+    <a href="/map-addSong">Click here to Add Song</a>
+    <a href="/viewSong">Click here to View Song</a>
+    <a href="/createPlaylist">Create Playlist</a>
+
 </body>
 </html>

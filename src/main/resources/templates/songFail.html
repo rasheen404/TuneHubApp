@@ -1,12 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Song Name Exists - TuneHub</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1A1A2E; /* Dark Background */
+            color: #F0F0F0; /* Light Text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Styling for the title */
+        h1 {
+            font-size: 3em;
+            color: #E94560; /* Accent Color */
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(233, 69, 96, 0.7);
+        }
+
+        /* Link to add song */
+        a {
+            display: inline-block;
+            font-size: 1.5em;
+            text-decoration: none;
+            color: #FFFFFF; /* White Text */
+            background-color: #6BCB77; /* Button Color */
+            padding: 15px 25px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(107, 203, 119, 0.5);
+        }
+
+        /* Link hover effect */
+        a:hover {
+            background-color: #4D9F6E; /* Darker Hover Color */
+            color: #FFFFFF; /* Maintain text color */
+            box-shadow: 0 8px 20px rgba(77, 159, 110, 0.7);
+            transform: translateY(-3px); /* Lift effect on hover */
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em; /* Adjust title size */
+            }
+
+            a {
+                font-size: 1.2em; /* Adjust link size */
+                padding: 10px 15px; /* Adjust padding */
+            }
+        }
+    </style>
 </head>
 <body>
-<h1>Song name already exist, Please try again</h1><br>
-<br>
-<a href="/map-addSong">Click here to add Song</a>
+
+    <h1>Song Name Already Exists, Please Try Again</h1>
+    <br>
+    <a href="/map-addSong">Click Here to Add Song</a>
+
 </body>
 </html>
