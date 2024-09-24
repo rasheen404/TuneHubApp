@@ -18,5 +18,40 @@ public class Playlist {
 
 	@ManyToMany
 	List<Song> song;
+	
+	
+	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Song> getSong() {
+		return song;
+	}
+
+	public void setSong(List<Song> song) {
+		this.song = song;
+	}
+
+	@Override
+	public String toString() {
+		return "Playlist [id=" + id + ", name=" + name + ", song=" + song + "]";
+	}
+	
+	
+	
 
 }

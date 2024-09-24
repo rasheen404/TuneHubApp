@@ -38,4 +38,10 @@ public class SongServiceImplementation implements SongService {
 		List<Song> songList = songRepository.findAll();
 		return songList;
 	}
+
+	@Override
+	public void updateSong(Song song) {
+		songRepository.save(song);
+		
+	}
 }

@@ -34,9 +34,25 @@ public class PlayListController {
 
 	@PostMapping("/addPlayList")
 	public String addPlayList(@ModelAttribute Playlist playlist) {
-		// TODO: process POST request
+		playListService.addPlayList(playlist);
+		List<Song> songsList = playlist.getSong();
+		for (Song song : songsList) {
+			song.getPlaylist().add(playlist);
+			songService.updateSong(song);
+		}
 
 		return "playListSuccess";
 	}
+	
+	@GetMapping("/viewPlaylist")
+	public String viewPlaylist(Model model) {
+		List<Playlist> playlist = playListService.fetchPlaylist();
+		System.err.println("------------------------"+playlist);
+		model.addAttribute("playlist", playlist);
+		return "viewPlaylist";
+		
+	
+	
 
+}
 }

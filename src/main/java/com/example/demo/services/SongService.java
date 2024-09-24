@@ -11,4 +11,6 @@ public interface SongService {
 	public boolean songExists(String name);
 
 	public List<Song> fetchAllSongs();
+
+	public void updateSong(Song song);
 }

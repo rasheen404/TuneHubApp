@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Playlist - TuneHub</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1A1A2E; /* Dark Background */
+            color: #F0F0F0; /* Light Text */
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Styling for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #0F3460; /* Dark Blue */
+            box-shadow: 0 4px 15px rgba(15, 52, 96, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #6BCB77; /* Green Separator */
+        }
+
+        th {
+            background-color: #6BCB77; /* Light Green */
+            color: #FFFFFF;
+            font-size: 1.2em;
+        }
+
+        td {
+            background-color: #16213E; /* Slightly lighter dark background */
+            color: #FFFFFF;
+            font-size: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        audio {
+            width: 150px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            table {
+                font-size: 0.8em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            audio {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Your Playlists</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Playlist ID</th>
+                <th>Playlist Name</th>
+                <th>Playlist Songs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="playlist : ${playlist}">
+                <td th:text="${playlist.id}"></td>
+                <td th:text="${playlist.name}"></td>
+                <td>
+                    <ul>
+                        <li th:each="s : ${playlist.song}">
+                            <audio controls>
+                                <source th:src="${s.link}" type="audio/mpeg">
+                            </audio>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
